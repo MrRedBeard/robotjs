@@ -1,62 +1,47 @@
-sudo: false
-language: cpp
+name: ci
 
-env:
-  matrix:
-    - TRAVIS_NODE_VERSION="8"
-    - TRAVIS_NODE_VERSION="10"
-    - TRAVIS_NODE_VERSION="12"
-    - TRAVIS_NODE_VERSION="stable"
+on:
+  push:
+  pull_request:
 
-os:
-  - linux
-  - osx
+jobs:
+  build:
+    runs-on: debian
 
-cache:
-  directories:
-    - node_modules
+    strategy:
+      matrix:
+        node:
+          - 20
 
-git:
-  depth: 5
+    steps:
+      - uses: actions/checkout@v4
 
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - libx11-dev
-      - zlib1g-dev
-      - libpng12-dev
-      - libxtst-dev
-      - g++-4.8
-      - gcc-4.8
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
 
-before_install:
-  - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh
-  - nvm install $TRAVIS_NODE_VERSION
-  - PATH=$PATH:`pwd`/node_modules/.bin
-  # print versions
-  - node --version
-  - npm --version
+      - name: Install native deps
+        run: |
+          sudo apt update;
+          sudo apt install -y \
+            build-essential \
+            pkg-config \
+            libx11-dev \
+            libxtst-dev \
+            libxinerama-dev \
+            libxrandr-dev \
+            libxi-dev \
+            libxext-dev \
+            libxfixes-dev \
+            libxkbfile-dev \
+            libpng-dev \
+            xvfb;
 
-  # use g++-4.8 on Linux
-  - if [[ $TRAVIS_OS_NAME == "linux" ]]; then export CXX=g++-4.8; fi
-  - $CXX --version
+      - name: Install
+        run: |
+          npm ci || npm install;
 
-install:
-  - npm install
-
-script:
-  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then npm test; fi
-  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then xvfb-run npm test; fi
-
-after_success:
-  - if [[ $TRAVIS_TAG != "" ]]; then npm run prebuild -- -u $GITHUB_TOKEN; fi
-
-notifications:
-  webhooks:
-    urls:
-      - https://webhooks.gitter.im/e/e737dd5170be50cdba95
-    on_success: change
-    on_failure: always
-    on_start: never
+      - name: Test
+        run: |
+          xvfb-run -a npm test;

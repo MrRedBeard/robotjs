@@ -1,3 +1,12 @@
+## v0.6.21 (2025-12-31)
+
+* forked from https://github.com/jitsi/robotjs
+* Updated python, node, dependenices
+* Added missing "#include <string.h>" to xdisplay.c
+* Not using windows builds so removed for now
+
+
+
 ## <small>0.5.1 (2018-03-03)</small>
 
 * 0.5.1 ([b9b0ab6](https://github.com/octalmage/robotjs/commit/b9b0ab6))

@@ -1,6 +1,6 @@
 {
-  "name": "@jitsi/robotjs",
-  "version": "0.6.18",
+  "name": "@mrredbeard/robotjs",
+  "version": "0.6.21",
   "description": "Node.js Desktop Automation.",
   "main": "index.js",
   "typings": "index.d.ts",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jitsi/robotjs.git"
+    "url": "git+https://github.com/MrRedBeard/robotjs.git"
   },
   "keywords": [
     "Automation",
@@ -48,17 +48,15 @@
     ]
   },
   "bugs": {
-    "url": "https://github.com/jitsi/robotjs/issues"
+    "url": "https://github.com/MrRedBeard/robotjs/issues"
   },
-  "homepage": "https://github.com/jitsi/robotjs",
+  "homepage": "https://github.com/MrRedBeard/robotjs",
   "dependencies": {
     "node-addon-api": "^8.3.0",
     "node-gyp-build": "^4.8.4"
   },
   "devDependencies": {
-    "@electron/rebuild": "^4.0.2",
     "jasmine": "^2.99.0",
-    "node-gyp": "^11.5.0",
     "prebuildify": "^6.0.1",
     "run-script-os": "^1.0.3",
     "tape": "^4.8.0",
