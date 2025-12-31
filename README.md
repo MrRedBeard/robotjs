@@ -29,11 +29,9 @@ This is a work in progress so the exported functions could change at any time be
 Install RobotJS using npm:
 
 ```
-npm install @jitsi/robotjs
+npm install github:MrRedBeard/robotjs#v0.6.21;
 ```
-It's that easy! npm will download one of the prebuilt [binaries](https://github.com/jitsi/robotjs/releases/latest) for your OS.
-
-You can get npm [here](https://nodejs.org/en/download/) if you don't have it installed.
+It's that easy! npm will download one of the prebuilt [binaries](https://github.com/MrRedBeard/robotjs/releases/latest) for your OS.
 
 If you need to build RobotJS, see the [building](#building) section. Instructions for [Electron](https://github.com/octalmage/robotjs/wiki/Electron).
 
