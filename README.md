@@ -2,19 +2,16 @@
 
 This repository is a fork of the original robotjs. The original project is no longer being maintained.
 
-<p align="center"><img src="https://cldup.com/1ATDf2JMtv.png"></p>
-
-<p align="center"><a href="https://travis-ci.org/octalmage/robotjs"><img src="https://api.travis-ci.org/octalmage/robotjs.svg?branch=master"></a> <a href="https://ci.appveyor.com/project/octalmage/robotjs"><img src="https://ci.appveyor.com/api/projects/status/qh2eqb37j7ap6x36?svg=true"></a> <a href="https://www.npmjs.com/package/robotjs"><img src="https://img.shields.io/npm/v/robotjs.svg"></a> <a href="https://gitter.im/octalmage/robotjs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"><img src="https://img.shields.io/badge/gitter-join%20chat-blue.svg"></a> <a href="http://waffle.io/octalmage/robotjs"><img src="https://img.shields.io/waffle/label/octalmage/robotjs/ready.svg?maxAge=3600"></a></p>
+![Logo](resources/logo-lite.svg#gh-light-mode-only)
+![Logo](resources/logo-dark.svg#gh-dark-mode-only)
 
 > Node.js Desktop Automation. Control the mouse, keyboard, and read the screen.
 
-RobotJS supports Mac, [Windows](https://github.com/octalmage/robotjs/issues/2), and [Linux](https://github.com/octalmage/robotjs/issues/17).
+RobotJS supports ~~Mac, Windows, and~~ Linux.
 
 This is a work in progress so the exported functions could change at any time before the first stable release (1.0.0). [Ideas?](https://github.com/octalmage/robotjs/issues/4)
 
 [Check out some of the cool things people are making with  RobotJS](https://github.com/octalmage/robotjs/wiki/Projects-using-RobotJS)! Have your own rad RobotJS project? Feel free to add it!
-
-<p align="center"><a href="https://twitter.com/robotjavascript"><img width="300" src="https://cldup.com/Et-C6_ue45.png"></a><a href="http://blog.robotjs.io"><img width="300" src="https://cldup.com/3apDirNmSB.png"></a></p>
 
 ## Contents
 
